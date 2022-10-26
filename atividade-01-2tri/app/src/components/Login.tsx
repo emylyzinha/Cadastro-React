@@ -1,5 +1,4 @@
 import { Dispatch, FormEventHandler, SetStateAction } from "react";
-import '../App.css'
 
 export default function ({setRoute}: {setRoute: Dispatch<SetStateAction<string>>}) {
   const enviarDados: FormEventHandler<HTMLFormElement> = async ev => {
@@ -34,15 +33,14 @@ export default function ({setRoute}: {setRoute: Dispatch<SetStateAction<string>>
   
   
   return <>
-    <div className="container">
-      <form onSubmit={enviarDados}>
-        <h1>LOGIN</h1>
-        <input name="email" placeholder="Email" />
-        <input name="password" placeholder="Password" />
-        <button onClick={() => {}}>Entrar</button>
-        <button onClick={() => setRoute("cadastro")}>Cadastrar</button>
-        <button onClick={() => setRoute("teste")}>Meus dados</button>
-      </form>
-    </div>
+    <form onSubmit={enviarDados}>
+      <h1>LOGIN</h1>
+      <input name="email" placeholder="EMAIL" />
+      <input name="password" type="password" placeholder="SENHA" />
+      
+      <button onClick={() => setRoute("teste")}><b>TESTAR</b></button>
+      <button onClick={() => setRoute("cadastro")}><b>CADASTRAR</b></button>
+      <button onClick={() => {}}><b>ENTRAR</b></button>
+    </form>
   </>
 }
